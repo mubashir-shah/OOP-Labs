@@ -1,0 +1,118 @@
+class Person{
+    public String name;
+    public String last;
+
+    public Person(String name, String last) {
+     this.name = name;
+     this.last = last;
+    }
+
+    void setname(){
+        this.name=name;
+    }
+    void setlast(){
+        this.last=last;
+    }
+    String getname(){
+        return name;
+    }
+    String getlast(){
+        return last;
+    }
+    void DisplayInfo(){
+        System.out.print("person name : "+name+" "+" person last name : "+last);
+    }
+}
+class Std extends Person{
+    public String teacher_name;
+    public int ID ;
+    public String course_name;
+    public Std(String name, String last, int ID, String course_name, String teacher_name) {
+        super(name, last);
+        this.ID = ID;
+        this.course_name = course_name;
+        this.teacher_name = teacher_name;
+    }
+
+    public int getStudentId() {
+        return ID;
+    }
+
+    public void setStudentId(int studentId) {
+        this.ID = ID;
+    }
+
+    public String getCourse() {
+        return course_name;
+    }
+
+    public void setCourse(String course) {
+        this.course_name = course_name;
+    }
+
+    public String getTeacherName() {
+        return teacher_name;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacher_name = teacher_name;
+    }
+
+    public void displayDetails() {
+        super.DisplayInfo();
+        System.out.println("Student ID: " + ID);
+        System.out.println("Course: " + course_name);
+        System.out.println("Teacher Name: " + teacher_name);
+    }
+}
+
+class Teacher extends Person {
+    private String subjectName;
+    private double salary;
+
+    public Teacher(String firstName, String lastName, String subjectName, double salary) {
+        super(firstName, lastName);
+        this.subjectName = subjectName;
+        this.salary = salary;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void display() {
+        super.DisplayInfo();
+        System.out.println("Subject: " + subjectName);
+        System.out.println("Salary: " + salary);
+    }
+}
+class Student{
+    public static void main (String str[]){
+        Std s1 = new Std("Mubashir", "Shah", 1234, "OOP", "Ms. Sana Fatima");
+        Std s2 = new Std("Abou bakar", "Arisar", 5678, "English", "Mr.Bhawal");
+
+        Teacher teacher1 = new Teacher("Ms.", "Sana", "OOP", 50000);
+        Teacher teacher2 = new Teacher("Mr.", "Bhawal", "English", 60000);
+
+        s1.displayDetails();
+        System.out.println();
+        s2.displayDetails();
+        System.out.println();
+        teacher1.display();
+        System.out.println();
+        teacher2.display();
+
+    }
+}
